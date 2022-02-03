@@ -1,4 +1,5 @@
 #include "DHT.h"
+#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 const int DHTPin = 5;     // what digital pin we're connected to
 
@@ -12,10 +13,8 @@ void setup() {
 }
 
 void loop() {
-   // Wait a few seconds between measurements.
    delay(2000);
 
-   // Reading temperature or humidity takes about 250 milliseconds!
    float h = dht.readHumidity();
    float t = dht.readTemperature();
 
@@ -30,5 +29,5 @@ void loop() {
    Serial.print(" %\t");
    Serial.print("Temperature: ");
    Serial.print(t);
-   Serial.println(" *C ");
+   Serial.print(" *C ");
 }
